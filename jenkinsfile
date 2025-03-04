@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/your-repo/flask-app.git'
+                git 'https://github.com/awabZemzemi/batteryVisualizationWebsite'
             }
         }
 
