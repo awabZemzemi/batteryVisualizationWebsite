@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/awabZemzemi/batteryVisualizationWebsite/main'
+                git 'https://github.com/awabZemzemi/batteryVisualizationWebsite.git'
             }
         }
 
