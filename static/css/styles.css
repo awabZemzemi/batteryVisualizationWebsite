@@ -1,0 +1,155 @@
+
+body {
+    background-image: image();
+    background-color: #EDF4F5;
+}
+
+.soh{
+    padding: 20px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    box-shadow: 10px 10px 10px -5px #BDD248;
+}
+nav {
+    background-color:black;
+    width: 90;
+    position: fixed;
+    top: 0px;
+    font-family: "Playwrite IT Moderna", cursive;
+    font-optical-sizing: auto;
+    color: white;
+}
+nav div{
+    width: 70% ;
+}
+nav img{
+    box-sizing: content-box;
+  
+}
+
+
+
+.inner {
+    position: relative;
+top: 40px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.inner .label {
+    font-weight:normal;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+#fetch-data-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2em;
+    color: white;
+    background: #BDD248;
+}
+#fetch-data-button:hover {
+    background: black;
+}
+
+#bike{
+    margin-left: 30px;
+    margin-top: 30px;
+}
+hr {
+    border-top: 20px #bdd248 solid;
+    width: 200px;
+    background: #bdd248;
+    margin: 10px 0;
+}
+footer{
+min-height: 200px;
+height: fit-content;
+margin-right: 0;
+color: white;
+background-color: black;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+footer .row{
+   box-sizing: border-box;
+    padding:50px 100px;
+    
+
+}
+footer span{
+        font-family: "Playwrite MX", cursive;
+        font-optical-sizing: auto;
+        font-weight:400 ;
+        font-style: bold;
+        color: #BDD248;
+}
+#copyright{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    color: white;
+    height: 50px;
+    background-color: #191919;
+    margin-bottom: 0;
+}
+/*
+#battery{first try
+    position: relative;
+    left: 300px;
+    top: 10px;
+    padding:0;
+    margin :10px;
+    height: 400px;
+    width: 400px;;
+    background-image: url(/static/images/battery.png);
+    background-size: cover;
+}
+#charge{
+    position: relative;
+    top: 16%;
+    left: 16%;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}*/
+#battery_container{
+    position: relative;
+    top :6%;
+    width: 200px; ;
+    height: 400px;
+    left  :30%;
+
+}
+#battery{
+
+    width: 200px;
+    height: 300px;
+    border: 5px solid black;
+    border-radius: 20px;
+    align-content:end
+    
+}
+#battery_level{
+    margin: auto;
+    width: 100%;
+    height: 0%;
+    background: red,rgb(255, 0, 0);
+    border-radius: 10px 10px 15px 15px;
+}
+
+
+#soh_message{
+    position: relative;
+    margin:auto;
+    text-align: center;
+}
+
+canvas{
+    margin: 25px;
+    
+}
