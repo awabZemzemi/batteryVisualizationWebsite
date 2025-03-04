@@ -1,0 +1,47 @@
+pipeline {
+    agent any
+
+    environment {
+        APP_DIR = "C:\\flask_app"
+        VENV_DIR = "${APP_DIR}\\venv"
+        FLASK_RUN_COMMAND = "gunicorn --bind 0.0.0.0:5000 wsgi:app"
+    }
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git 'https://github.com/your-repo/flask-app.git'
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                powershell """
+                if (!(Test-Path '${VENV_DIR}')) {
+                    python -m venv ${VENV_DIR}
+                }
+                ${VENV_DIR}\\Scripts\\activate
+                pip install -r requirements.txt
+                """
+            }
+        }
+
+        stage('Deploy Application') {
+            steps {
+                powershell """
+                taskkill /F /IM gunicorn.exe /T
+                Start-Process -NoNewWindow -FilePath '${VENV_DIR}\\Scripts\\python.exe' -ArgumentList 'wsgi.py'
+                """
+            }
+        }
+    }
+
+    post {
+        success {
+            echo "Flask app deployed successfully!"
+        }
+        failure {
+            echo "Deployment failed!"
+        }
+    }
+}
